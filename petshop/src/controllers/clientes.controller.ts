@@ -53,8 +53,45 @@ const addClient = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const updateClient = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  //
+  try {
+    const clientData = req.body;
+    const clientId = parseInt(req.params.id);
+
+    await clientesService.updateClient(clientId, clientData);
+
+    return res.status(StatusCodes.OK).end();
+  } catch (err) {
+    next(err);
+  }
+};
+
+const deleteClient = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  //
+  try {
+    const clientId = req.params.id;
+
+    await clientesService.deleteClient(parseInt(clientId));
+
+    return res.status(StatusCodes.OK).end();
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAll,
   getById,
   addClient,
+  updateClient,
+  deleteClient,
 };
