@@ -19,7 +19,6 @@ const errorMiddleware = (
 
   if (typeof code === 'number')
     return res.status(code).json({ message: err.message });
-  console.log(err.code);
 
   if (err instanceof Prisma.PrismaClientKnownRequestError) {
     console.log(`

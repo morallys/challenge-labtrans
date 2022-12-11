@@ -61,7 +61,6 @@ const updateClient = async (id: number, clientData: Cliente) => {
 const deleteClient = async (id: number) => {
   //
   const findClient = await prisma.cliente.findUnique({ where: { id } });
-  console.log(findClient);
 
   if (!findClient)
     throw new Err(StatusCodes.NOT_FOUND, errorMessage.clientNotFound);
