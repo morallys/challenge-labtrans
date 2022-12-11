@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 import clientesService from '../services/clientes.service';
+import errorMessage from '../utils/errorMessages';
 
 const getAll = async (_req: Request, res: Response, next: NextFunction) => {
   //
@@ -11,7 +12,7 @@ const getAll = async (_req: Request, res: Response, next: NextFunction) => {
     if (clientes.length === 0) {
       return res
         .status(StatusCodes.NOT_FOUND)
-        .json({ message: 'Nenhum cliente encontrado!!' });
+        .json({ message: errorMessage.clientNotFound });
     }
 
     return res.status(StatusCodes.OK).json(clientes);
@@ -30,7 +31,7 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
     if (cliente === null) {
       return res
         .status(StatusCodes.NOT_FOUND)
-        .json({ message: 'Cliente não encontrado' });
+        .json({ message: errorMessage.clientNotFound });
     }
 
     return res.status(StatusCodes.OK).json(cliente);
@@ -39,7 +40,21 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const addClient = async (req: Request, res: Response, next: NextFunction) => {
+  //
+  try {
+    const clientData = req.body;
+
+    const cliente = await clientesService.addClient(clientData);
+
+    return res.status(StatusCodes.CREATED).json(cliente);
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAll,
   getById,
+  addClient,
 };
