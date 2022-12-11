@@ -1,8 +1,9 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { StatusCodes } from 'http-status-codes';
 
-import Err from '../utils/Err';
+import { Cliente } from '@prisma/client';
 import errorMessage from '../utils/errorMessages';
+import Err from '../utils/Err';
 
 const prisma = new PrismaClient();
 
@@ -15,7 +16,7 @@ const getById = async (id: String) => {
   const convertId = Number(id);
 
   if (Number.isNaN(convertId)) {
-    throw new Err(StatusCodes.BAD_REQUEST, errorMessage.number);
+    throw new Err(StatusCodes.BAD_REQUEST, `Id ${errorMessage.number}`);
   }
 
   return prisma.cliente.findUnique({
@@ -25,7 +26,17 @@ const getById = async (id: String) => {
   });
 };
 
+const addClient = async (clientData: Cliente) => {
+  //
+  const cliente = await prisma.cliente.create({
+    data: clientData,
+  });
+
+  return cliente;
+};
+
 export default {
   getAll,
   getById,
+  addClient,
 };
