@@ -4,4 +4,10 @@
 
   DATABASE_URL="mysql://login:senha@localhost:3306/nome-do-banco-desejado"
 
+\*\* Para inicialização do projeto, seguir passos abaixo:
+
+- Instalação de dependências do projeto: `npm install`
+
+- Criação do banco de dados: `npx prisma migrate dev`
+
 - Inicialização do servidor: `npm run dev`
