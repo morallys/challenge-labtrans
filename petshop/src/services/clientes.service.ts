@@ -35,8 +35,44 @@ const addClient = async (clientData: Cliente) => {
   return cliente;
 };
 
+const updateClient = async (id: number, clientData: Cliente) => {
+  //
+  const { nome, email, telefone, rua, numero, bairro, cidade } = clientData;
+
+  const findClient = await prisma.cliente.findUnique({ where: { id } });
+
+  if (!findClient)
+    throw new Err(StatusCodes.NOT_FOUND, errorMessage.clientNotFound);
+
+  return prisma.cliente.updateMany({
+    where: { id },
+    data: {
+      nome,
+      email,
+      telefone,
+      rua,
+      numero,
+      bairro,
+      cidade,
+    },
+  });
+};
+
+const deleteClient = async (id: number) => {
+  //
+  const findClient = await prisma.cliente.findUnique({ where: { id } });
+  console.log(findClient);
+
+  if (!findClient)
+    throw new Err(StatusCodes.NOT_FOUND, errorMessage.clientNotFound);
+
+  return prisma.cliente.delete({ where: { id } });
+};
+
 export default {
   getAll,
   getById,
   addClient,
+  updateClient,
+  deleteClient,
 };
