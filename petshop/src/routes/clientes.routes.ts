@@ -8,6 +8,8 @@ const router = Router();
 router
   .get('/', clientesController.getAll)
   .get('/:id', clientesController.getById)
-  .post('/', clientesMiddleware.checkBody, clientesController.addClient);
+  .put('/:id', clientesMiddleware.checkBody, clientesController.updateClient)
+  .post('/', clientesMiddleware.checkBody, clientesController.addClient)
+  .delete('/:id', clientesController.deleteClient);
 
 export default router;
