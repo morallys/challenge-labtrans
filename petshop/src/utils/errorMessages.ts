@@ -8,7 +8,7 @@ const errorMessage = {
   streetLenght: 'A rua deve ter 5 caracteres no mínimo',
   clientNotFound: 'Nenhum cliente encontrado!!',
   invalidPhone: 'Deve ser um telefone válido com 11 caracteres',
-  conflict: 'Os dados já existem no banco de dados',
+  conflict: 'Email já existe no banco de dados',
 };
 
 export default errorMessage;
