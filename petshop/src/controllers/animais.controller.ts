@@ -53,8 +53,27 @@ const addAnimal = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const updateAnimal = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  //
+  try {
+    const animalData = req.body;
+    const animalId = parseInt(req.params.id);
+
+    await animaisService.updateAnimal(animalId, animalData);
+
+    return res.status(StatusCodes.OK).end();
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAll,
   getById,
   addAnimal,
+  updateAnimal,
 };
