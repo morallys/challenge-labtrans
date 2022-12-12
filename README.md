@@ -14,7 +14,15 @@
 
 - Inicialização do servidor: `npm run dev`
 
-  ***
+
+  ************
+  
+  
+#### Documentação da API
+
+- Documentação da API (em construção): http://localhost:3535/api-docs
+
+  ************
 
 -- A API conta com rotas para cadastramentos de clientes, que são as seguintes:
 
