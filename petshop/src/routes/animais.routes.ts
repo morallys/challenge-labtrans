@@ -8,6 +8,7 @@ router
   .get('/', animaisController.getAll)
   .get('/:id', animaisController.getById)
   .put('/:id', animaisController.updateAnimal)
+  .delete('/:id', animaisController.deleteAnimal)
   .post('/', animaisController.addAnimal);
 
 export default router;
