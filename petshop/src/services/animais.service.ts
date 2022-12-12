@@ -66,7 +66,6 @@ const deleteAnimal = async (id: number) => {
   const findAnimal = await prisma.animal.findUnique({ where: { id } });
 
   if (!findAnimal) {
-    console.log(!findAnimal);
     throw new Err(StatusCodes.NOT_FOUND, errorMessage.animalNotFound);
   }
 
