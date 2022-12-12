@@ -2,9 +2,13 @@
 
 -- API para cadastramento de animais e seus donos.
 
+A API funciona como um cadastramento de Clientes e seus animais, dessa forma, não é possível inserir um animal sem um dono. Por isso, é necessário inicialmente cadastrar um cliente, e com o id criado para ele, cadastrar o animal.
+
+  ************
 - OBS: Para inicialização do sistema do Prisma, inicialmente alterar o arquivo `example.env`. Remover a extensão 'example' e deixar apenas o .env com as informação de login do MySQL, como login e senha, porta padrão do MySQL no computador e nome do banco desejado.
 
   DATABASE_URL="mysql://login:senha@localhost:3306/nome-do-banco-desejado"
+************
 
 #### Para inicialização do projeto, seguir passos abaixo:
 
@@ -23,6 +27,8 @@
 - Documentação da API (em construção): http://localhost:3535/api-docs
 
   ************
+
+#### Instruções de utilização
 
 -- A API conta com rotas para cadastramentos de clientes, que são as seguintes:
 
