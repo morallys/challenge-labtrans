@@ -27,26 +27,30 @@
   - DELETE - http://localhost:3535/clientes/delete/:id - deleta cliente cadastrado.
 
     - Para inserção de cliente - POST:
-      {
-      "nome": "Fulano de Tal",
-      "email": "fulano@gmail.com",
-      "telefone": "13586596583",
-      "rua": "Rua das Projetada",
-      "numero": 50,
-      "bairro": "Dourado",
-      "cidade": "Inventada"
-      }
+      ```
+        {
+          "nome": "Fulano de Tal",
+          "email": "fulano@gmail.com",
+          "telefone": "13586596583",
+          "rua": "Rua das Projetada",
+          "numero": 50,
+          "bairro": "Dourado",
+          "cidade": "Inventada"
+        }
+      ```
 
     - Para atualização de cliente - PUT:
-      {
-      "nome": "Fulano da Silva",
-      "email": "fulano@gmail.com",
-      "telefone": "13586596583",
-      "rua": "Rua das Projetada 13",
-      "numero": 50,
-      "bairro": "Balão Dourado",
-      "cidade": "Inventada"
-      }
+      ```
+        {
+          "nome": "Fulano da Silva",
+          "email": "fulano@gmail.com",
+          "telefone": "13586596583",
+          "rua": "Rua das Projetada 13",
+          "numero": 50,
+          "bairro": "Balão Dourado",
+          "cidade": "Inventada"
+        }
+      ```
 
 - Animais
 
@@ -58,20 +62,24 @@
 
   - Para inserção de animal - POST:
 
-    {
-    "nome": "Walter White",
-    "sexo": "Macho",
-    "especie": "Cães",
-    "raca": "Vira-lata",
-    "cliente_id": 1
-    }
+    ```
+      {
+        "nome": "Walter White",
+        "sexo": "Macho",
+        "especie": "Cães",
+        "raca": "Vira-lata",
+        "cliente_id": 1
+      }
+    ```
 
   - Para atualização de animal - PUT:
 
-    {
-    "nome": "James",
-    "sexo": "macho",
-    "especie": "Cães",
-    "raca": "Pastor Alemão",
-    "cliente_id": 3
-    }
+    ```
+      {
+        "nome": "James",
+        "sexo": "macho",
+        "especie": "Cães",
+        "raca": "Pastor Alemão",
+        "cliente_id": 3
+      }
+    ```
