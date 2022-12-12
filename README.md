@@ -1,6 +1,6 @@
 # challenge-labtrans
 
--- API para cadastramento de animais e seus donos.
+- API para cadastramento de animais e seus donos.
 
 A API funciona como um cadastramento de Clientes e seus animais, dessa forma, não é possível inserir um animal sem um dono. Por isso, é necessário inicialmente cadastrar um cliente, e com o id criado para ele, cadastrar o animal.
 
