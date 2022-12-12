@@ -21,6 +21,40 @@ const getAll = async (_req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const getById = async (req: Request, res: Response, next: NextFunction) => {
+  //
+  try {
+    const { id } = req.params;
+
+    const animal = await animaisService.getById(id);
+
+    if (animal === null) {
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: errorMessage.animalNotFound });
+    }
+
+    return res.status(StatusCodes.OK).json(animal);
+  } catch (err) {
+    next();
+  }
+};
+
+const addAnimal = async (req: Request, res: Response, next: NextFunction) => {
+  //
+  try {
+    const animalData = req.body;
+
+    const animal = await animaisService.addAnimal(animalData);
+
+    return res.status(StatusCodes.CREATED).json(animal);
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAll,
+  getById,
+  addAnimal,
 };
