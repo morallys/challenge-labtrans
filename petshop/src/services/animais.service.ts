@@ -61,9 +61,22 @@ const updateAnimal = async (id: number, animalData: Animal) => {
   });
 };
 
+const deleteAnimal = async (id: number) => {
+  //
+  const findAnimal = await prisma.animal.findUnique({ where: { id } });
+
+  if (!findAnimal) {
+    console.log(!findAnimal);
+    throw new Err(StatusCodes.NOT_FOUND, errorMessage.animalNotFound);
+  }
+
+  return prisma.animal.delete({ where: { id } });
+};
+
 export default {
   getAll,
   getById,
   addAnimal,
   updateAnimal,
+  deleteAnimal,
 };
