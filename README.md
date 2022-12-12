@@ -1,10 +1,12 @@
 # challenge-labtrans
 
+-- API para cadastramento de animais e seus donos.
+
 - OBS: Para inicialização do sistema do Prisma, inicialmente alterar o arquivo `example.env`. Remover a extensão 'example' e deixar apenas o .env com as informação de login do MySQL, como login e senha, porta padrão do MySQL no computador e nome do banco desejado.
 
   DATABASE_URL="mysql://login:senha@localhost:3306/nome-do-banco-desejado"
 
-#### Para inicialização do projeto, seguir passos abaixo: 
+#### Para inicialização do projeto, seguir passos abaixo:
 
 - Instalação de dependências do projeto: `npm install`
 
