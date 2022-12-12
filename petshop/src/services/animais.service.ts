@@ -48,8 +48,22 @@ const addAnimal = async (animalData: Animal) => {
   return animal;
 };
 
+const updateAnimal = async (id: number, animalData: Animal) => {
+  //
+  const findAnimal = await prisma.animal.findUnique({ where: { id } });
+
+  if (!findAnimal)
+    throw new Err(StatusCodes.NOT_FOUND, errorMessage.animalNotFound);
+
+  return prisma.animal.updateMany({
+    where: { id },
+    data: animalData,
+  });
+};
+
 export default {
   getAll,
   getById,
   addAnimal,
+  updateAnimal,
 };
