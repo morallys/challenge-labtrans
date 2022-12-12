@@ -2,7 +2,7 @@ const errorMessage = {
   allFields: 'Todos os campos devem ser preenchidos',
   animalsNotFound: 'Nenhum animal cadastrado!!',
   animalNotFound: 'Animal não encontrado!!',
-  clientNotFound: 'Nenhum cliente encontrado!!',
+  clientNotFound: 'Nenhum cliente encontrado',
   conflict: 'Email já existe no banco de dados',
   invalid: 'Deve ser um e-mail válido',
   invalidCpf: 'Deve ser um CPF válido',
