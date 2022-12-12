@@ -71,9 +71,27 @@ const updateAnimal = async (
   }
 };
 
+const deleteAnimal = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  //
+  try {
+    const animalId = parseInt(req.params.id);
+
+    await animaisService.deleteAnimal(animalId);
+
+    return res.status(StatusCodes.OK).end();
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAll,
   getById,
   addAnimal,
   updateAnimal,
+  deleteAnimal,
 };
