@@ -1,7 +1,4 @@
-import { PrismaClient, Prisma } from '@prisma/client';
 import { Request, Response, NextFunction } from 'express';
-
-const prisma = new PrismaClient();
 
 import validate from '../services/validate';
 
