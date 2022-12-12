@@ -7,6 +7,7 @@ const router = Router();
 router
   .get('/', animaisController.getAll)
   .get('/:id', animaisController.getById)
+  .put('/:id', animaisController.updateAnimal)
   .post('/', animaisController.addAnimal);
 
 export default router;
