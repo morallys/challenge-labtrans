@@ -1,14 +1,16 @@
 const errorMessage = {
   allFields: 'Todos os campos devem ser preenchidos',
-  invalid: 'Deve ser um e-mail válido',
-  number: 'Deve ser um número',
-  string: 'Deve ser uma string',
-  invalidCpf: 'Deve ser um CPF válido',
-  nameLenght: 'O nome deve ter 5 caracteres no mínimo',
-  streetLenght: 'A rua deve ter 5 caracteres no mínimo',
+  animalsNotFound: 'Nenhum animal cadastrado!!',
+  animalNotFound: 'Animal não encontrado!!',
   clientNotFound: 'Nenhum cliente encontrado!!',
-  invalidPhone: 'Deve ser um telefone válido com 11 caracteres',
   conflict: 'Email já existe no banco de dados',
+  invalid: 'Deve ser um e-mail válido',
+  invalidCpf: 'Deve ser um CPF válido',
+  invalidPhone: 'Deve ser um telefone válido com 11 caracteres',
+  nameLenght: 'O nome deve ter 5 caracteres no mínimo',
+  number: 'Deve ser um número',
+  streetLenght: 'A rua deve ter 5 caracteres no mínimo',
+  string: 'Deve ser uma string',
 };
 
 export default errorMessage;
