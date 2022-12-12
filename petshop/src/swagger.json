@@ -49,10 +49,21 @@
         },
         "responses": {
           "409": {
-            "description": "Conflict"
+            "description": "Conflict - Já existe o e-mail no banco de dados"
+          },
+          "400": {
+            "description": "Bad Request - Dados faltando ou inválidos"
           },
           "201": {
-            "description": "Created"
+            "description": "Created - Cliente criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
           }
         }
       }
