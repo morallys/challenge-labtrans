@@ -11,7 +11,7 @@ const getAll = async () => {
   return prisma.cliente.findMany();
 };
 
-const getById = async (id: String) => {
+const getById = async (id: string) => {
   //
   const convertId = Number(id);
 
