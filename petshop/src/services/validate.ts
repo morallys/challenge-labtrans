@@ -4,7 +4,7 @@ import emailPattern from '../utils/emailPattern';
 import Err from '../utils/Err';
 import errorMessage from '../utils/errorMessages';
 
-const emailClient = async (email: string) => {
+const emailClient = (email: string) => {
   //
   if (email === undefined)
     throw new Err(StatusCodes.BAD_REQUEST, errorMessage.allFields);

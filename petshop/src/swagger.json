@@ -1,0 +1,102 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Pets - Challenge-Labtrans",
+    "description": "A API tem como objetivo o cadastramento de clientes e seus pets.",
+    "termsOfService": "http://localhost:3535/terms",
+    "contact": {
+      "email": "morallys.juan@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3535/clientes",
+      "description": "Buscas e cadastramento de clientes no banco de dados"
+    },
+    {
+      "url": "http://localhost:3535/animais",
+      "description": "Buscas e cadastramento de animais no banco de dados"
+    }
+  ],
+  "paths": {
+    "/clientes": {
+      "post": {
+        "summary": "Cadastro de clientes",
+        "description": "Essa rota será responsável por cadastrar um novo Cliente.",
+        "tags": ["Clientes"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cliente"
+              },
+              "examples": {
+                "cliente": {
+                  "value": {
+                    "nome": "Bill Gates",
+                    "email": "gates@microsoft.com",
+                    "telefone": "13586596583",
+                    "rua": "Bellevue Way NE",
+                    "numero": 700,
+                    "bairro": "King",
+                    "cidade": "Redmond"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "409": {
+            "description": "Conflict - Já existe o e-mail no banco de dados"
+          },
+          "400": {
+            "description": "Bad Request - Dados faltando ou inválidos"
+          },
+          "201": {
+            "description": "Created - Cliente criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cliente": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "telefone": {
+            "type": "string"
+          },
+          "rua": {
+            "type": "string"
+          },
+          "numero": {
+            "type": "number"
+          },
+          "bairro": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
