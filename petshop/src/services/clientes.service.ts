@@ -28,6 +28,12 @@ const getById = async (id: string) => {
 
 const addClient = async (clientData: Cliente) => {
   //
+  const { email } = clientData;
+
+  const findClient = await prisma.cliente.findUnique({ where: { email } });
+
+  if (findClient) throw new Err(StatusCodes.CONFLICT, errorMessage.conflict);
+
   const cliente = await prisma.cliente.create({
     data: clientData,
   });
@@ -37,8 +43,6 @@ const addClient = async (clientData: Cliente) => {
 
 const updateClient = async (id: number, clientData: Cliente) => {
   //
-  const { nome, email, telefone, rua, numero, bairro, cidade } = clientData;
-
   const findClient = await prisma.cliente.findUnique({ where: { id } });
 
   if (!findClient)
