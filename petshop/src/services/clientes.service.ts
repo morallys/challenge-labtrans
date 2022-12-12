@@ -46,15 +46,7 @@ const updateClient = async (id: number, clientData: Cliente) => {
 
   return prisma.cliente.updateMany({
     where: { id },
-    data: {
-      nome,
-      email,
-      telefone,
-      rua,
-      numero,
-      bairro,
-      cidade,
-    },
+    data: clientData,
   });
 };
 
