@@ -20,7 +20,7 @@
     }
   ],
   "paths": {
-    "/clientes": {
+    "/clientes/created": {
       "post": {
         "summary": "Cadastro de clientes",
         "description": "Essa rota será responsável por cadastrar um novo Cliente.",
@@ -67,6 +67,9 @@
           }
         }
       }
+    },
+    "/clientes/getAll": {
+      "get": {}
     }
   },
   "components": {
