@@ -6,10 +6,14 @@ import clientesMiddleware from '../middlewares/clientes.middleware';
 const router = Router();
 
 router
-  .get('/', clientesController.getAll)
-  .get('/:id', clientesController.getById)
-  .put('/:id', clientesMiddleware.checkBody, clientesController.updateClient)
-  .post('/', clientesMiddleware.checkBody, clientesController.addClient)
-  .delete('/:id', clientesController.deleteClient);
+  .get('/getAll', clientesController.getAll)
+  .get('/getById/:id', clientesController.getById)
+  .put(
+    '/update/:id',
+    clientesMiddleware.checkBody,
+    clientesController.updateClient
+  )
+  .post('/created', clientesMiddleware.checkBody, clientesController.addClient)
+  .delete('/delete/:id', clientesController.deleteClient);
 
 export default router;
