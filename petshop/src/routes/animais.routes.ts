@@ -5,10 +5,10 @@ import animaisController from '../controllers/animais.controller';
 const router = Router();
 
 router
-  .get('/', animaisController.getAll)
-  .get('/:id', animaisController.getById)
-  .put('/:id', animaisController.updateAnimal)
-  .delete('/:id', animaisController.deleteAnimal)
-  .post('/', animaisController.addAnimal);
+  .get('/getAll', animaisController.getAll)
+  .get('/getById/:id', animaisController.getById)
+  .put('/update/:id', animaisController.updateAnimal)
+  .post('/created', animaisController.addAnimal)
+  .delete('/delete/:id', animaisController.deleteAnimal);
 
 export default router;
